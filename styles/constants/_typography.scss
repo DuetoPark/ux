@@ -1,0 +1,33 @@
+$font-size-map: (
+  12: 0.75rem,
+  14: 0.875rem,
+  16: 1rem,
+  18: 1.125rem,
+  24: 1.5rem,
+  28: 1.75rem,
+  34: 2.125rem,
+);
+
+@function _get-font-size($size) {
+  @return map-get($font-size-map, $size);
+}
+
+$font-size-12: _get-font-size(12);
+$line-height-12: _get-font-size(16);
+$letter-spacing-12: -0.005em;
+
+$font-size-14: _get-font-size(14);
+$line-height-14: _get-font-size(24);
+$letter-spacing-14: -0.01em;
+
+$font-size-16: _get-font-size(16);
+$line-height-16: _get-font-size(24);
+$letter-spacing-16: -0.01em;
+
+$font-size-18: _get-font-size(18);
+$line-height-18: _get-font-size(28);
+$letter-spacing-18: -0.02em;
+
+$font-size-24: _get-font-size(24);
+$line-height-24: _get-font-size(34);
+$letter-spacing-24: -0.01em;
