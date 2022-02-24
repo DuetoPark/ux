@@ -1,0 +1,143 @@
+$margin-for-icon: 40px;
+
+%form-base {
+  @include text-style(16, $primary);
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+
+  &::placeholder {
+    color: $tertiary;
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
+    background-color: $background;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.form-input,
+.search-input,
+.search-delete-input,
+.form-select {
+  @extend %form-base;
+}
+
+// NOTE: INPUT
+.input-group {
+  position: relative;
+
+  .search-input,
+  .search-delete-input {
+    padding-left: $margin-for-icon;
+  }
+
+  .search-delete-input {
+    padding-right: $margin-for-icon;
+  }
+
+  .delete-button {
+    @include pos-center-y;
+    @include flexbox;
+    right: 6px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    color: $tertiary;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  .ic-search {
+    @include pos-center-y;
+    left: 10px;
+    font-size: 20px;
+    color: $secondary;
+  }
+}
+
+// NOTE: SELECT
+.select-group {
+  position: relative;
+
+  .form-select {
+    @extend %form-base;
+    @include truncate;
+    width: 100%;
+    padding-right: $margin-for-icon;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
+    &:hover:not(:disabled) + .ic-caret {
+      color: $primary;
+    }
+
+    &.is-active {
+      border-color: $blue;
+
+      &:disabled + .ic-caret {
+        opacity: 0.4;
+      }
+
+      + .ic-caret {
+        color: $blue !important;
+      }
+    }
+  }
+
+  .ic-caret {
+    @include pos-center-y;
+    right: 8px;
+    font-size: 24px;
+    color: $tertiary;
+    transition: color 200ms ease-in-out;
+  }
+}
+
+// NOTE: CHECKBOX
+.checkbox-group {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+  padding-left: $margin-for-icon;
+
+  input:checked + label > i {
+    color: $blue;
+  }
+
+  label {
+    @include text-style(16, $primary);
+    display: block;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  &:hover {
+    i {
+      color: $secondary;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 16px;
+    left: 11px;
+    font-size: 22px;
+    color: $border;
+    transition: color 200ms ease-in-out;
+  }
+}
