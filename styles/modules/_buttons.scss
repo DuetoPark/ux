@@ -1,0 +1,65 @@
+%btn-base {
+  @include flexbox;
+  @include text-style(18);
+  height: 55px;
+  padding: 0 8px;
+  font-style: italic;
+  font-weight: 700;
+  border-radius: 4px;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.btn-primary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $blue;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: $blue-dark;
+  }
+}
+
+.btn-secondary {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $border;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: $tertiary;
+  }
+}
+
+.btn-outlined {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $white;
+  border: 1px solid $border;
+  transition: all 200ms ease-in-out;
+
+  &:hover,
+  &:active {
+    color: $blue;
+    background-color: $blue-light;
+    border-color: $blue;
+  }
+}
+
+.btn-ghost {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $white;
+  transition: color 200ms ease-in-out;
+
+  &:hover,
+  &:active {
+    color: $secondary;
+  }
+}
