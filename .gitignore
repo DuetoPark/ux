@@ -106,3 +106,4 @@ dist
 # ETC.
 style.css.map
 .DS_Store
+components.html
