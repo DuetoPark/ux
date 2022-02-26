@@ -1,5 +1,6 @@
 .guide-article {
   &-header {
+    width: 100%;
     padding: 8px 0;
 
     .title {
@@ -9,6 +10,7 @@
   }
 
   &-content {
+    width: 100%;
     padding-left: 8px;
   }
 
