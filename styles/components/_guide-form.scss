@@ -1,0 +1,57 @@
+.guide-form {
+  .input-group {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .is-border {
+    input {
+      &:active,
+      &:focus {
+        border-color: $blue;
+        box-shadow: 0 0 0 6px $blue-light;
+      }
+    }
+  }
+
+  .is-color {
+    input {
+      &:active + label,
+      &:focus + label {
+        color: $red;
+      }
+    }
+  }
+
+  .is-move {
+    input {
+      &:placeholder-shown + label {
+        @include text-style(16, $tertiary);
+        pointer-events: none;
+        transform: translate(17px, 24px + 8px);
+      }
+
+      &:active + label,
+      &:focus + label {
+        @include text-style(14, $primary);
+        font-weight: 700;
+        transform: none;
+      }
+    }
+  }
+
+  @include responsive('T') {
+    .input-group {
+      padding: 12px 0;
+    }
+
+    .is-move {
+      input {
+        &:active + label,
+        &:focus + label {
+          @include text-style(16);
+        }
+      }
+    }
+  }
+}
