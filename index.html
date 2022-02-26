@@ -47,14 +47,97 @@
 
           <div class="row">
             <div class="col-sm-4 col-md-6">
-              <article class="guide-article">
+              <article class="guide-article input-ui">
                 <header class="guide-article-header">
-                  <h2 class="title" lang="en">Input</h2>
+                  <h2 class="title" lang="en">Input - UI</h2>
                 </header>
 
                 <div class="guide-article-content">
-                  <dl>
-                    <div>
+                  <dl class="input-list">
+                    <div class="input-item">
+                      <dt lang="en">Default</dt>
+                      <dd>
+                        <div class="input-group">
+                          <input
+                            class="form-input"
+                            type="text"
+                            placeholder="입력하세요"
+                          />
+                        </div>
+                      </dd>
+                    </div>
+
+                    <div class="input-item">
+                      <dt>아이콘이 있는 경우</dt>
+                      <dd>
+                        <div class="input-group">
+                          <input
+                            class="search-input"
+                            type="text"
+                            placeholder="입력하세요"
+                          />
+
+                          <i class="ic-search" aria-hidden="true"></i>
+                        </div>
+                      </dd>
+                    </div>
+
+                    <div class="input-item">
+                      <dt>버튼이 있는 경우</dt>
+                      <dd>
+                        <div class="input-group">
+                          <input
+                            class="form-input"
+                            type="text"
+                            placeholder="입력하세요"
+                          />
+
+                          <button
+                            class="delete-button"
+                            type="button"
+                            aria-label="입력어 삭제하기"
+                          >
+                            <i class="ic-close" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </dd>
+                    </div>
+
+                    <div class="input-item">
+                      <dt>아이콘과 버튼이 같이 있는 경우</dt>
+                      <dd>
+                        <div class="input-group">
+                          <input
+                            class="search-input"
+                            type="text"
+                            placeholder="입력하세요"
+                          />
+
+                          <i class="ic-search" aria-hidden="true"></i>
+                          <button
+                            class="delete-button"
+                            type="button"
+                            aria-label="입력어 삭제하기"
+                          >
+                            <i class="ic-close" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-sm-4 col-md-6">
+              <article class="guide-article input-ux">
+                <header class="guide-article-header">
+                  <h2 class="title" lang="en">Input - UX</h2>
+                </header>
+
+                <div class="guide-article-content">
+                  <dl class="input-list">
+                    <div class="input-item">
                       <dt lang="en">Default</dt>
                       <dd>
                         <div class="input-group">
