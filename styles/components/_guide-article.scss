@@ -1,0 +1,28 @@
+.guide-article {
+  &-header {
+    padding: 8px 0;
+
+    .title {
+      @include text-style(18, $dark);
+      font-style: italic;
+    }
+  }
+
+  &-content {
+    padding-left: 8px;
+  }
+
+  @include responsive('T') {
+    &-header {
+      padding: 16px 0;
+
+      .title {
+        @include text-style(24);
+      }
+    }
+
+    &-content {
+      padding-left: 0;
+    }
+  }
+}
