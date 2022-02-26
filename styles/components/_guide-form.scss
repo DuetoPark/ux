@@ -1,4 +1,21 @@
 .guide-form {
+  dl,
+  dl > div {
+    width: 100%;
+  }
+
+  dt,
+  dd {
+    display: block;
+    width: 100%;
+  }
+
+  dt {
+    @include text-style(14, $dark);
+    padding: 8px 0;
+    font-weight: 700;
+  }
+
   .input-group {
     width: 100%;
     padding: 8px 0;
@@ -41,8 +58,22 @@
   }
 
   @include responsive('T') {
+    dl > div:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    dt {
+      @include text-style(18);
+      padding: 16px 0;
+    }
+
+    dd:not(:last-child) {
+      display: block;
+      margin-bottom: 16px;
+    }
+
     .input-group {
-      padding: 12px 0;
+      padding: 0;
     }
 
     .is-move {

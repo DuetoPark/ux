@@ -1,11 +1,5 @@
-.label-list {
+.label-group {
   $text-line-height: 24px;
-
-  width: 100%;
-
-  .label-item {
-    width: 100%;
-  }
 
   label {
     @include text-style(14, $primary);
