@@ -110,8 +110,6 @@ $margin-for-icon: 40px;
 .checkbox-group {
   position: relative;
   width: 100%;
-  padding: 16px;
-  padding-left: $margin-for-icon;
 
   input:checked + label > i {
     color: $blue;
@@ -120,6 +118,9 @@ $margin-for-icon: 40px;
   label {
     @include text-style(16, $primary);
     display: block;
+    padding: 16px;
+    padding-left: $margin-for-icon;
+    cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
