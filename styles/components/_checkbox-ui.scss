@@ -1,0 +1,86 @@
+.checkbox-group {
+  $checkbox-icon: 40px;
+
+  position: relative;
+  width: 100%;
+
+  input:checked + label {
+    i {
+      color: $blue;
+    }
+  }
+
+  label {
+    @include text-style(14, $primary);
+    display: block;
+    padding: 8px;
+    padding-right: 16px;
+    padding-left: $checkbox-icon;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    &:hover {
+      i {
+        color: $secondary;
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 8px;
+      left: 11px;
+      font-size: 20px;
+      color: $border;
+      transition: color 200ms ease-in-out;
+    }
+  }
+
+  .icon-button {
+    @include pos-center-y;
+    @include flexbox;
+    right: 4px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    color: $secondary;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:active {
+      background-color: $background;
+    }
+
+    i {
+      display: block;
+      transform: rotate(-90deg);
+      transition: transform 200ms ease-in-out;
+    }
+  }
+
+  &.is-medium {
+    label {
+      @include text-style(16);
+      padding: 16px;
+      padding-left: $checkbox-icon;
+      font-weight: 500;
+
+      i {
+        top: 16px;
+        font-size: 22px;
+      }
+    }
+
+    .icon-button {
+      right: 0;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+  }
+}
