@@ -14,20 +14,24 @@ $margin-for-icon: 40px;
     color: $tertiary;
   }
 
-  &:not(:disabled):hover,
-  &:not(:disabled):focus {
+  &:not(:disabled):hover {
     background-color: $background;
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.4;
+
+    ~ * {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
   }
 }
 
 .form-input,
 .search-input,
-.search-delete-input,
 .form-select {
   @extend %form-base;
 }
@@ -36,27 +40,25 @@ $margin-for-icon: 40px;
 .input-group {
   position: relative;
 
-  .search-input,
-  .search-delete-input {
+  .search-input {
     padding-left: $margin-for-icon;
-  }
-
-  .search-delete-input {
-    padding-right: $margin-for-icon;
   }
 
   .delete-button {
     @include pos-center-y;
     @include flexbox;
     right: 6px;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     font-size: 18px;
     color: $tertiary;
-    transition: color 200ms ease-in-out;
+    border-radius: 50%;
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
 
+    &:active,
     &:hover {
       color: $secondary;
+      background-color: $border;
     }
   }
 
