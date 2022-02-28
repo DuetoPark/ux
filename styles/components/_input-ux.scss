@@ -1,0 +1,65 @@
+.input-ux {
+  $text-line-height: 24px;
+
+  .is-border {
+    input {
+      &:active,
+      &:focus {
+        border-color: $blue;
+        box-shadow: 0 0 0 6px $blue-light;
+      }
+    }
+  }
+
+  .is-label {
+    position: relative;
+    padding-top: $text-line-height;
+
+    label {
+      @include text-style(14, $primary);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 200ms ease-in-out;
+    }
+
+    &.is-color {
+      input:active + label,
+      input:focus + label {
+        color: $red;
+      }
+    }
+
+    &.is-move {
+      input:placeholder-shown + label {
+        @include text-style(16, $tertiary);
+        pointer-events: none;
+        visibility: hidden;
+        transform: translate(17px, 24px + 8px);
+      }
+
+      input:active + label,
+      input:focus + label {
+        @include text-style(14, $primary);
+        font-weight: 700;
+        visibility: visible;
+        transform: none;
+      }
+    }
+  }
+
+  @include responsive('T') {
+    .is-label {
+      label {
+        @include text-style(16);
+      }
+
+      &.is-move {
+        input:active + label,
+        input:focus + label {
+          @include text-style(16);
+        }
+      }
+    }
+  }
+}
