@@ -1,4 +1,6 @@
 .guide-article {
+  margin-bottom: 16px;
+
   &-header {
     width: 100%;
     padding: 8px 0;
@@ -6,6 +8,7 @@
     .title {
       @include text-style(18, $dark);
       font-style: italic;
+      text-decoration: underline;
     }
   }
 
@@ -14,6 +17,8 @@
   }
 
   @include responsive('T') {
+    margin-bottom: 40px;
+
     &-header {
       padding: 16px 0;
 
