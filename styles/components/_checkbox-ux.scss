@@ -1,0 +1,30 @@
+.checkbox-ux {
+  $required-collapse-count: 3;
+  $option-collapse-count: 2;
+  $collapse-item-height: 40px;
+
+  @function _get-collapse-height($count) {
+    @return $count * $collapse-item-height;
+  }
+
+  .is-required {
+    &.is-open {
+      .collapse-content {
+        max-height: _get-collapse-height($required-collapse-count);
+      }
+    }
+  }
+
+  .is-option {
+    &.is-open {
+      .collapse-content {
+        max-height: _get-collapse-height($option-collapse-count);
+      }
+    }
+  }
+
+  .checkbox-desc {
+    @include text-style(14, $primary);
+    padding-left: 40px;
+  }
+}
