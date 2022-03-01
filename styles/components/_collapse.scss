@@ -1,0 +1,23 @@
+.collapse {
+  &.is-open {
+    .collapse-header {
+      .icon-button i {
+        transform: rotate(0);
+      }
+    }
+
+    .collapse-content {
+      max-height: auto;
+    }
+  }
+
+  &-header {
+    border-bottom: 1px solid $border;
+  }
+
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out;
+  }
+}
