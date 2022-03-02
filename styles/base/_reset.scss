@@ -55,6 +55,13 @@ dd {
   margin: 0;
 }
 
-dt {
-  font-weight: 400;
+dl,
+dl > div {
+  width: 100%;
+}
+
+dt,
+dd {
+  display: block;
+  width: 100%;
 }
