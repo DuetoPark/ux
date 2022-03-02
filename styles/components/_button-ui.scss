@@ -1,0 +1,50 @@
+.button-ui {
+  .text-button-group {
+    button {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .icon-button-group {
+    @include inline-flexbox(start);
+
+    .icon-button {
+      @include flexbox;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      color: $primary;
+      border: 1px solid $border;
+      border-radius: 50%;
+      transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      &:hover,
+      &:active {
+        color: $white;
+        background-color: $blue;
+      }
+    }
+  }
+
+  @include responsive('T') {
+    .icon-button-group {
+      .icon-button {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+}
