@@ -9,6 +9,10 @@
       @include text-style(18, $dark);
       font-style: italic;
       text-decoration: underline;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
   }
 
