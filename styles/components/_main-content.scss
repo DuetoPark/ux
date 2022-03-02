@@ -1,0 +1,42 @@
+.main-content {
+  .guide-form,
+  .guide-button {
+    dt {
+      @include text-style(14, $dark);
+      padding: 8px 0;
+      font-weight: 500;
+    }
+  }
+
+  .guide-form {
+    .input-group {
+      width: 100%;
+      padding: 8px 0;
+    }
+  }
+
+  @include responsive('T') {
+    .guide-form,
+    .guide-button {
+      dl > div:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      dt {
+        @include text-style(18);
+        padding: 16px 0;
+      }
+
+      dd:not(:last-child) {
+        display: block;
+        margin-bottom: 16px;
+      }
+    }
+
+    .guide-form {
+      .input-group {
+        padding: 0;
+      }
+    }
+  }
+}
