@@ -13,7 +13,7 @@
 
   .is-label {
     position: relative;
-    padding-top: $text-line-height;
+    padding-top: $text-line-height !important;
 
     label {
       @include text-style(14, $primary);
