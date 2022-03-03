@@ -18,6 +18,16 @@
 
   &-content {
     width: 100%;
+
+    .subtitle {
+      @include text-style(14, $secondary);
+      padding: 4px 0;
+      font-weight: 400;
+
+      &::before {
+        content: '- ';
+      }
+    }
   }
 
   @include responsive('T') {
@@ -33,6 +43,10 @@
 
     &-content {
       padding-left: 0;
+
+      .subtitle {
+        padding: 8px 0;
+      }
     }
   }
 }

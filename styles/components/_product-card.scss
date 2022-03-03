@@ -1,0 +1,63 @@
+.product-card {
+  display: block;
+  width: 100%;
+
+  &:active,
+  &:hover {
+    .product-card-info .title {
+      color: $green;
+    }
+  }
+
+  &-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; // Ratio 16:9
+    margin-bottom: 8px;
+    overflow: hidden;
+    border-radius: 4px;
+
+    img {
+      @include pos-center;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-info {
+    .title {
+      @include line-clamp(2);
+      @include text-style(14, $dark);
+      margin-bottom: 4px;
+      transition: color 200ms ease-in-out;
+    }
+
+    dd {
+      @include text-style(12, $tertiary);
+    }
+
+    strong {
+      font-weight: 400;
+    }
+  }
+
+  @include responsive('T') {
+    &-thumbnail {
+      margin-bottom: 16px;
+    }
+
+    &-info {
+      .title {
+        @include text-style(24);
+        margin-bottom: 8px;
+      }
+
+      dd {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
