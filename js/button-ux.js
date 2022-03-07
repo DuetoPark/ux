@@ -1,3 +1,5 @@
+'use strict'
+
 const buttonUxSection = document.querySelector('.button-ux')
 const agreementButton = buttonUxSection.querySelector('.agreement-button')
 
