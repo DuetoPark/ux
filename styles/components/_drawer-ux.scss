@@ -1,0 +1,19 @@
+.drawer-ux {
+  .is-open {
+    &.non-folding {
+      .drawer-menu-button {
+        pointer-events: none;
+
+        .ic-chevron {
+          display: none;
+        }
+      }
+    }
+
+    &.is-text-link {
+      .text-link {
+        display: block;
+      }
+    }
+  }
+}

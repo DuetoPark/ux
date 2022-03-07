@@ -1,0 +1,123 @@
+.drawer-menu {
+  $drawer-content-padding: 16px * 2;
+  $text-line-height: 24px;
+  $text-line: 4;
+
+  @function _getMaxHeight($line) {
+    @return ($line * $text-line-height) + $drawer-content-padding;
+  }
+
+  &.is-open {
+    .drawer-menu-button {
+      .ic-chevron {
+        transform: translateY(-50%) rotate(0);
+      }
+    }
+
+    .drawer-menu-content {
+      max-height: _getMaxHeight($text-line);
+      padding: 16px 0;
+    }
+  }
+
+  &-header {
+    position: relative;
+    border-bottom: 1px solid $border;
+  }
+
+  &-button {
+    @include flexbox(start);
+    @include text-style(14, $primary);
+    position: relative;
+    width: 100%;
+    height: 54px;
+    padding: 16px 0;
+    padding-right: 20px;
+    font-weight: 700;
+    text-align: left;
+    transition: color 200ms ease-in-out;
+
+    &.with-icon {
+      padding-left: 24px;
+    }
+
+    &:active,
+    &:hover {
+      color: $dark;
+
+      i {
+        color: $primary;
+      }
+    }
+
+    .badge {
+      margin-left: 4px;
+      font-weight: 700;
+      color: $blue;
+      pointer-events: none;
+    }
+
+    i {
+      @include pos-center-y;
+      color: $secondary;
+      transform: translateY(-50%) rotate(-90deg);
+      transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+    }
+
+    .ic-check {
+      left: 0;
+      font-size: 18px;
+      transform: translateY(-58%);
+    }
+
+    .ic-chevron {
+      right: 0;
+      font-size: 20px;
+    }
+  }
+
+  .text-link {
+    @include pos-center-y;
+    @include text-style(14);
+    right: 0;
+    display: none;
+    padding: 8px;
+    font-weight: 700;
+    color: $blue;
+    transition: opacity 200ms ease-in-out;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &-content {
+    @include text-style(14, $primary);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out, padding 200ms ease-in-out;
+  }
+
+  @include responsive('T') {
+    &-button {
+      height: 64px;
+      padding-right: 24px;
+
+      &.with-icon {
+        padding-left: 24px;
+      }
+
+      .badge {
+        margin-left: 8px;
+      }
+
+      .ic-check {
+        font-size: 22px;
+      }
+
+      .ic-chevron {
+        font-size: 24px;
+      }
+    }
+  }
+}

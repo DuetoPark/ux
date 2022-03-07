@@ -1,6 +1,7 @@
 .main-content {
   .guide-form,
-  .guide-button {
+  .guide-button,
+  .guide-drawer {
     dt {
       @include text-style(14, $dark);
       padding: 8px 0;
@@ -15,9 +16,16 @@
     }
   }
 
+  .guide-drawer {
+    dl > div {
+      margin-bottom: 36px;
+    }
+  }
+
   @include responsive('T') {
     .guide-form,
-    .guide-button {
+    .guide-button,
+    .guide-drawer {
       dl > div:not(:last-child) {
         margin-bottom: 32px;
       }
