@@ -7,7 +7,7 @@ function toggleDrawerMenu(event) {
   const target = event.target
   if (!target.matches('.drawer-menu-button')) return
 
-  const drawerMenu = target.parentNode.parentNode
+  const drawerMenu = target.parentNode
   drawerMenu.classList.toggle('is-open')
 }
 
