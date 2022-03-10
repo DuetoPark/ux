@@ -1,5 +1,18 @@
 .drawer-ux {
+  $drawer-content-padding: 16px * 2;
+  $text-line-height: 24px;
+  $text-line: 5;
+
+  @function _getMaxHeight($line) {
+    @return ($line * $text-line-height) + $drawer-content-padding;
+  }
+
   .is-open {
+    .drawer-menu-content {
+      max-height: _getMaxHeight($text-line);
+      padding: 16px 0;
+    }
+
     &.non-folding {
       .drawer-menu-button {
         pointer-events: none;

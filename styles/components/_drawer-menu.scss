@@ -1,28 +1,10 @@
 .drawer-menu {
-  $drawer-content-padding: 16px * 2;
-  $text-line-height: 24px;
-  $text-line: 4;
-
-  @function _getMaxHeight($line) {
-    @return ($line * $text-line-height) + $drawer-content-padding;
-  }
-
   &.is-open {
     .drawer-menu-button {
       .ic-chevron {
         transform: translateY(-50%) rotate(0);
       }
     }
-
-    .drawer-menu-content {
-      max-height: _getMaxHeight($text-line);
-      padding: 16px 0;
-    }
-  }
-
-  &-header {
-    position: relative;
-    border-bottom: 1px solid $border;
   }
 
   &-button {
@@ -35,6 +17,7 @@
     padding-right: 20px;
     font-weight: 700;
     text-align: left;
+    border-bottom: 1px solid $border;
     transition: color 200ms ease-in-out;
 
     &.with-icon {
