@@ -1,7 +1,11 @@
 .drawer-ux {
   $drawer-content-padding: 16px * 2;
   $text-line-height: 24px;
+
   $text-line: 5;
+  $community-line: 8;
+  $store-line: 7;
+  $expert-line: 4;
 
   @function _getMaxHeight($line) {
     @return ($line * $text-line-height) + $drawer-content-padding;
@@ -26,6 +30,24 @@
     &.is-text-link {
       .text-link {
         display: block;
+      }
+    }
+
+    &.is-community {
+      .drawer-menu-content {
+        max-height: _getMaxHeight($community-line);
+      }
+    }
+
+    &.is-store {
+      .drawer-menu-content {
+        max-height: _getMaxHeight($store-line);
+      }
+    }
+
+    &.is-expert {
+      .drawer-menu-content {
+        max-height: _getMaxHeight($expert-line);
       }
     }
   }
